@@ -1,0 +1,35 @@
+const API_KEY = "1d3a0eefa97b499d8fbc4ee93eeb40b7";
+
+This line declares a constant variable API_KEY and assigns it a string value, which is likely an API key used to authenticate requests to the NewsAPI service.
+const url = "https://newsapi.org/v2/everything?q=";
+
+This line declares a constant variable url and assigns it a string value representing the base URL for the NewsAPI endpoint used to fetch news articles.
+window.addEventListener("load", () => fetchNews("India"));
+
+This line adds an event listener to the window object for the "load" event. When the page is fully loaded, it calls the fetchNews function with the argument "India" to initially fetch news articles related to India.
+function reload() { ... }
+
+This is a function declaration for the reload function, which, when called, will reload the current page.
+async function fetchNews(query) { ... }
+
+This is a function declaration for the fetchNews asynchronous function that takes a query parameter. This function is responsible for fetching news articles based on the provided query using the NewsAPI service. It makes an API request, processes the response, and then calls the bindData function to display the fetched articles.
+function bindData(articles) { ... }
+
+This is a function declaration for the bindData function, which takes an array of articles as a parameter. This function is responsible for populating the HTML page with news article cards based on the provided articles data.
+function fillDataInCard(cardClone, article) { ... }
+
+This is a function declaration for the fillDataInCard function, which takes a cardClone (a clone of the news card template) and an article as parameters. This function fills the cloned card template with data from the provided article object, such as the image, title, source, description, and a click event listener to open the full article in a new tab.
+let curSelectedNav = null;
+
+This declares a mutable variable curSelectedNav and initializes it with a null value. This variable is used to keep track of the currently selected navigation item.
+function onNavItemClick(id) { ... }
+
+This is a function declaration for the onNavItemClick function, which takes an id parameter representing the navigation item clicked. This function fetches news articles based on the provided id, updates the selected navigation item's appearance, and clears the previously selected navigation item.
+const searchButton = document.getElementById("search-button");
+const searchText = document.getElementById("search-text");
+
+These lines declare constant variables searchButton and searchText by selecting HTML elements with the IDs "search-button" and "search-text," respectively. These elements are used for the search functionality.
+searchButton.addEventListener("click", () => { ... });
+
+This line adds a click event listener to the searchButton element. When the search button is clicked, this listener triggers an anonymous function that reads the search query from the searchText input element, fetches news articles based on the query using the fetchNews function, and updates the selected navigation item.
+Each of these lines contributes to the overall functionality of the provided JavaScript code, which includes fetching news articles, displaying them on the page, handling navigation clicks, and implementing a search feature.
